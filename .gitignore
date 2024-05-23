@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# dev helpers
+repo-*.sh
+combined_*.txt
+BIZDEV.md
