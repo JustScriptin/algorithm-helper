@@ -53,7 +53,7 @@
     "id-length": ["error", {
       "min": 3,
       "max": 40,
-      "exceptions": ["fs", "_"]
+      "exceptions": ["fs", "_", "id"]
     }],
     "max-depth": ["error", 4],
     "max-nested-callbacks": ["error", 4],
