@@ -5,14 +5,11 @@ const config = {
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
     moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/$1',
-      },
-    testMatch: ['**/tests/**/*.(ts|tsx|js|jsx)', '**/?(*.)+(spec|test).(ts|tsx|js|jsx)'],
-    globals: {
-      'ts-jest': {
-        tsconfig: 'tsconfig.json',
-      },
     },
-  };
-  
-  module.exports = config;
-  
+    testMatch: ['**/tests/**/*.(ts|tsx|js|jsx)', '**/?(*.)+(spec|test).(ts|tsx|js|jsx)'],
+    transform: {
+        '^.+\\.tsx?$': ['ts-jest', { tsconfig: 'tsconfig.json' }],
+    },
+};
+
+module.exports = config;
