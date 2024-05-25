@@ -9,7 +9,7 @@
     "plugin:@typescript-eslint/recommended",
     "eslint:recommended"
   ],
-  "ignorePatterns": ["next.config.mjs"],
+  "ignorePatterns": ["next.config.mjs", "jest.config.js"],
   "rules": {
     "@typescript-eslint/no-unused-vars": ["error", { "varsIgnorePattern": "^_" }],
     "no-unused-vars": "off",
