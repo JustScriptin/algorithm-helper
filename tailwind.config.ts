@@ -1,80 +1,86 @@
-import type { Config } from "tailwindcss"
+/* eslint-disable id-length */
+import type { Config } from "tailwindcss";
 
-const config = {
-  darkMode: ["class"],
+const config: Config = {
+  darkMode: [ "class" ],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
-  prefix: "",
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./lib/**/*.{ts,tsx}",
+    "./styles/**/*.{ts,tsx}"
+  ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
+        primary: "var(--color-primary)",
+        darkBlue: "var(--color-dark-blue)",
+        lightBlue: "var(--color-light-blue)",
+        green: "var(--color-green)",
+        red: "var(--color-red)",
+        yellow: "var(--color-yellow)",
+        lightGray: "var(--color-light-gray)",
+        gray: "var(--color-gray)",
+        darkGray: "var(--color-dark-gray)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
+        primaryForeground: "hsl(var(--primary-foreground))",
+        secondaryForeground: "hsl(var(--secondary-foreground))"
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "var(--border-radius-lg)",
+        md: "var(--border-radius-md)",
+        sm: "var(--border-radius-sm)"
       },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
+      fontFamily: {
+        sans: [ "var(--font-family-sans)" ]
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
+      fontSize: {
+        h1: [
+          "var(--font-size-h1)",
+          { lineHeight: "var(--line-height-h1)", fontWeight: "var(--font-weight-bold)" }
+        ],
+        h2: [
+          "var(--font-size-h2)",
+          { lineHeight: "var(--line-height-h2)", fontWeight: "var(--font-weight-semibold)" }
+        ],
+        h3: [
+          "var(--font-size-h3)",
+          { lineHeight: "var(--line-height-h3)", fontWeight: "var(--font-weight-semibold)" }
+        ],
+        h4: [
+          "var(--font-size-h4)",
+          { lineHeight: "var(--line-height-h4)", fontWeight: "var(--font-weight-semibold)" }
+        ],
+        h5: [
+          "var(--font-size-h5)",
+          { lineHeight: "var(--line-height-h5)", fontWeight: "var(--font-weight-bold)" }
+        ],
+        h6: [
+          "var(--font-size-h6)",
+          { lineHeight: "var(--line-height-h6)", fontWeight: "var(--font-weight-semibold)" }
+        ],
+        body: [
+          "var(--font-size-body)",
+          { lineHeight: "var(--line-height-body)", fontWeight: "var(--font-weight-regular)" }
+        ],
+        small: [
+          "var(--font-size-small)",
+          { lineHeight: "var(--line-height-small)", fontWeight: "var(--font-weight-regular)" }
+        ]
+      }
     },
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px"
+      }
+    }
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
+  plugins: [ require("tailwindcss-animate") ]
+};
 
-export default config
+export default config;
