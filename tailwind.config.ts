@@ -12,73 +12,47 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "var(--color-primary)",
-        darkBlue: "var(--color-dark-blue)",
-        lightBlue: "var(--color-light-blue)",
-        green: "var(--color-green)",
-        red: "var(--color-red)",
-        yellow: "var(--color-yellow)",
-        lightGray: "var(--color-light-gray)",
-        gray: "var(--color-gray)",
-        darkGray: "var(--color-dark-gray)",
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primaryForeground: "hsl(var(--primary-foreground))",
-        secondaryForeground: "hsl(var(--secondary-foreground))"
+        primary: {
+          50: 'rgb(var(--color-primary-50) / <alpha-value>)',
+          100: 'rgb(var(--color-primary-100) / <alpha-value>)',
+          200: 'rgb(var(--color-primary-200) / <alpha-value>)',
+          300: 'rgb(var(--color-primary-300) / <alpha-value>)',
+          400: 'rgb(var(--color-primary-400) / <alpha-value>)',
+          500: 'rgb(var(--color-primary-500) / <alpha-value>)',
+          600: 'rgb(var(--color-primary-600) / <alpha-value>)',
+          700: 'rgb(var(--color-primary-700) / <alpha-value>)',
+          800: 'rgb(var(--color-primary-800) / <alpha-value>)',
+          900: 'rgb(var(--color-primary-900) / <alpha-value>)',
+        },
+        secondary: {
+          50: 'rgb(var(--color-secondary-50) / <alpha-value>)',
+          100: 'rgb(var(--color-secondary-100) / <alpha-value>)',
+          200: 'rgb(var(--color-secondary-200) / <alpha-value>)',
+          300: 'rgb(var(--color-secondary-300) / <alpha-value>)',
+          400: 'rgb(var(--color-secondary-400) / <alpha-value>)',
+          500: 'rgb(var(--color-secondary-500) / <alpha-value>)',
+          600: 'rgb(var(--color-secondary-600) / <alpha-value>)',
+          700: 'rgb(var(--color-secondary-700) / <alpha-value>)',
+          800: 'rgb(var(--color-secondary-800) / <alpha-value>)',
+          900: 'rgb(var(--color-secondary-900) / <alpha-value>)',
+        },
+        gray: {
+          50: 'rgb(var(--color-gray-50) / <alpha-value>)',
+          100: 'rgb(var(--color-gray-100) / <alpha-value>)',
+          200: 'rgb(var(--color-gray-200) / <alpha-value>)',
+          300: 'rgb(var(--color-gray-300) / <alpha-value>)',
+          400: 'rgb(var(--color-gray-400) / <alpha-value>)',
+          500: 'rgb(var(--color-gray-500) / <alpha-value>)',
+          600: 'rgb(var(--color-gray-600) / <alpha-value>)',
+          700: 'rgb(var(--color-gray-700) / <alpha-value>)',
+          800: 'rgb(var(--color-gray-800) / <alpha-value>)',
+          900: 'rgb(var(--color-gray-900) / <alpha-value>)',
+        },
+        success: 'rgb(var(--color-success) / <alpha-value>)',
+        danger: 'rgb(var(--color-danger) / <alpha-value>)',
+        warning: 'rgb(var(--color-warning) / <alpha-value>)',
       },
-      borderRadius: {
-        lg: "var(--border-radius-lg)",
-        md: "var(--border-radius-md)",
-        sm: "var(--border-radius-sm)"
-      },
-      fontFamily: {
-        sans: [ "var(--font-family-sans)" ]
-      },
-      fontSize: {
-        h1: [
-          "var(--font-size-h1)",
-          { lineHeight: "var(--line-height-h1)", fontWeight: "var(--font-weight-bold)" }
-        ],
-        h2: [
-          "var(--font-size-h2)",
-          { lineHeight: "var(--line-height-h2)", fontWeight: "var(--font-weight-semibold)" }
-        ],
-        h3: [
-          "var(--font-size-h3)",
-          { lineHeight: "var(--line-height-h3)", fontWeight: "var(--font-weight-semibold)" }
-        ],
-        h4: [
-          "var(--font-size-h4)",
-          { lineHeight: "var(--line-height-h4)", fontWeight: "var(--font-weight-semibold)" }
-        ],
-        h5: [
-          "var(--font-size-h5)",
-          { lineHeight: "var(--line-height-h5)", fontWeight: "var(--font-weight-bold)" }
-        ],
-        h6: [
-          "var(--font-size-h6)",
-          { lineHeight: "var(--line-height-h6)", fontWeight: "var(--font-weight-semibold)" }
-        ],
-        body: [
-          "var(--font-size-body)",
-          { lineHeight: "var(--line-height-body)", fontWeight: "var(--font-weight-regular)" }
-        ],
-        small: [
-          "var(--font-size-small)",
-          { lineHeight: "var(--line-height-small)", fontWeight: "var(--font-weight-regular)" }
-        ]
-      }
     },
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px"
-      }
-    }
   },
   plugins: [ require("tailwindcss-animate") ]
 };

@@ -12,18 +12,18 @@ import { twMerge } from "tailwind-merge";
  * @returns {string} The merged class name string with conflicts resolved.
  *
  * @example
- * mergeTailwindClasses('text-lg p-4', { 'bg-blue-500': true, 'text-white': true }, 'rounded p-2')
+ * cn('text-lg p-4', { 'bg-blue-500': true, 'text-white': true }, 'rounded p-2')
  * // Returns: 'text-lg text-white bg-blue-500 rounded p-2'
  *
  * @example
- * mergeTailwindClasses('flex justify-center', 'items-center', 'hover:bg-green-500 focus:ring-2')
+ * cn('flex justify-center', 'items-center', 'hover:bg-green-500 focus:ring-2')
  * // Returns: 'flex justify-center items-center hover:bg-green-500 focus:ring-2'
  *
  * @example
- * mergeTailwindClasses('block', someCondition && 'hidden', isActive ? 'bg-red-500' : 'bg-green-500')
+ * cn('block', someCondition && 'hidden', isActive ? 'bg-red-500' : 'bg-green-500')
  * // Returns: 'block bg-green-500' if someCondition is false and isActive is false
  * // Returns: 'block hidden bg-red-500' if someCondition is true and isActive is true
  */
-export function mergeTailwindClasses(...inputs: ClassValue[]){
+export function cn(...inputs: ClassValue[]){
   return twMerge(clsx(inputs));
 }

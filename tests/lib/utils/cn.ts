@@ -1,11 +1,11 @@
-import { mergeTailwindClasses } from "@/lib/utils/mergeTailwindClasses";
+import { cn } from "@/lib/utils/cn";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 jest.mock("clsx");
 jest.mock("tailwind-merge");
 
-describe("mergeTailwindClasses", () => {
+describe("cn", () => {
   beforeEach(() => {
     (clsx as jest.Mock).mockClear();
     (twMerge as jest.Mock).mockClear();
@@ -18,7 +18,7 @@ describe("mergeTailwindClasses", () => {
     (clsx as jest.Mock).mockReturnValue(expectedClassString);
     (twMerge as jest.Mock).mockReturnValue(expectedClassString);
 
-    const result = mergeTailwindClasses(...inputClasses);
+    const result = cn(...inputClasses);
 
     expect(clsx).toHaveBeenCalledWith(inputClasses);
     expect(twMerge).toHaveBeenCalledWith(expectedClassString);
@@ -32,7 +32,7 @@ describe("mergeTailwindClasses", () => {
     (clsx as jest.Mock).mockReturnValue("bg-red-500 bg-blue-500");
     (twMerge as jest.Mock).mockReturnValue(mergedClassString);
 
-    const result = mergeTailwindClasses(...inputClasses);
+    const result = cn(...inputClasses);
 
     expect(clsx).toHaveBeenCalledWith(inputClasses);
     expect(twMerge).toHaveBeenCalledWith("bg-red-500 bg-blue-500");
@@ -46,7 +46,7 @@ describe("mergeTailwindClasses", () => {
     (clsx as jest.Mock).mockReturnValue(mergedClassString);
     (twMerge as jest.Mock).mockReturnValue(mergedClassString);
 
-    const result = mergeTailwindClasses(...inputClasses);
+    const result = cn(...inputClasses);
 
     expect(clsx).toHaveBeenCalledWith(inputClasses);
     expect(twMerge).toHaveBeenCalledWith(mergedClassString);
@@ -64,7 +64,7 @@ describe("mergeTailwindClasses", () => {
     (clsx as jest.Mock).mockReturnValue(expectedClassString);
     (twMerge as jest.Mock).mockReturnValue(expectedClassString);
 
-    const result = mergeTailwindClasses(...inputClasses);
+    const result = cn(...inputClasses);
 
     expect(clsx).toHaveBeenCalledWith(inputClasses);
     expect(twMerge).toHaveBeenCalledWith(expectedClassString);
@@ -78,7 +78,7 @@ describe("mergeTailwindClasses", () => {
     (clsx as jest.Mock).mockReturnValue(expectedClassString);
     (twMerge as jest.Mock).mockReturnValue(expectedClassString);
 
-    const result = mergeTailwindClasses(...inputClasses);
+    const result = cn(...inputClasses);
 
     expect(clsx).toHaveBeenCalledWith(inputClasses);
     expect(twMerge).toHaveBeenCalledWith(expectedClassString);
@@ -96,7 +96,7 @@ describe("mergeTailwindClasses", () => {
     (clsx as jest.Mock).mockReturnValue(clsxResult);
     (twMerge as jest.Mock).mockReturnValue(expectedClassString);
 
-    const result = mergeTailwindClasses(...inputClasses);
+    const result = cn(...inputClasses);
 
     expect(clsx).toHaveBeenCalledWith(inputClasses);
     expect(twMerge).toHaveBeenCalledWith(clsxResult);
