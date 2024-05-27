@@ -1,7 +1,9 @@
+import Heading from "@/components/ui/Heading";
+
 export default function Home(){
   return (
     <main>
-      <p>Lorem ipsum dolor sit amet consectetur!</p>
+      <Heading as="h2">Hello, world!</Heading>
     </main>
   );
 }
