@@ -6,7 +6,7 @@ type HeadingProps = React.HTMLAttributes<HTMLHeadingElement> & {
   as?: 'h1' | 'h2' | 'h3' | 'h4';
 };
 
-const headingClasses = cva('scroll-m-20 tracking-tight text-gray-900', {
+const headingClasses = cva('scroll-m-20 tracking-tight text-foreground', {
   variants: {
     size: {
       h1: 'text-4xl font-extrabold lg:text-5xl',

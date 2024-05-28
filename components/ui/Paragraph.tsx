@@ -6,7 +6,7 @@ type ParagraphProps = React.HTMLAttributes<HTMLParagraphElement> & {
   size?: 'sm' | 'base' | 'lg';
 };
 
-const paragraphClasses = cva('leading-7 text-gray-900 [&:not(:first-child)]:mt-6', {
+const paragraphClasses = cva('leading-7 text-foreground [&:not(:first-child)]:mt-6', {
   variants: {
     size: {
       sm: 'text-sm',
