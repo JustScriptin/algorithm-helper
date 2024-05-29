@@ -1,9 +1,11 @@
 import Link from "next/link"
+import Image from "next/image"
+import { ModeToggle } from "@/components/theme/ThemeToggle"
 
 export function HomePage() {
   return (
     <div key="1" className="flex flex-col min-h-[100dvh] bg-[#021627] text-white">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
+      <header className="px-4 lg:px-6 h-14 flex items-center gap-6">
         <Link className="flex items-center justify-center" href="#">
           <BrainIcon className="h-6 w-6 text-[#81E202]" />
           <span className="sr-only">LeetCode Prep</span>
@@ -22,6 +24,7 @@ export function HomePage() {
             Contact
           </Link>
         </nav>
+        <ModeToggle />
       </header>
       <main className="flex-1">
         <section className="w-full pt-12 md:pt-24 lg:pt-32 bg-[#03223A]">
@@ -33,8 +36,8 @@ export function HomePage() {
                 </h1>
                 <p className="mx-auto max-w-[700px] text-[#DDEEF8] md:text-xl dark:text-[#DDEEF8]">
                   Our AI-powered application provides personalized practice and guidance to help you
-                  <span className="bg-gradient-to-r from-[#81E202] to-[#DDEEF8] bg-clip-text text-transparent">
-                    ace your next technical interview.
+                  <span className="before-content-space bg-gradient-to-r from-[#81E202] to-[#DDEEF8] bg-clip-text text-transparent">
+                  &nbsp;ace your next technical interview.
                   </span>
                 </p>
                 <div className="space-x-4 mt-6">
@@ -47,11 +50,11 @@ export function HomePage() {
                 </div>
               </div>
             </div>
-            <img
+            <Image
               alt="Hero"
               className="mx-auto aspect-[3/1] overflow-hidden rounded-t-xl object-cover"
               height="300"
-              src="/placeholder.svg"
+              src="/hero.jpeg"
               width="1270"
             />
           </div>
@@ -67,7 +70,7 @@ export function HomePage() {
                   Our AI-powered application provides personalized practice and guidance to help you conquer
                   Leetcode-style challenges and
                   <span className="bg-gradient-to-tr from-[#DDEEF8] to-[#81E202] bg-clip-text text-transparent">
-                    ace your next technical interview
+                  &nbsp;ace your next technical interview
                   </span>
                   .
                 </p>
